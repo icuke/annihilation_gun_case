@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  telegram-bot:
+    build: .
+    container_name: telegram-bot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=
+      - LOGGING_LEVEL=INFO
+      - ADMIN_IDS=[]
+    volumes:
+      - ./logs:/app/logs
